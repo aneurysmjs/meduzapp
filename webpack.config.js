@@ -1,10 +1,17 @@
 let { resolve } = require('path');
 let webpack = require('webpack');
 
+/**
+ *
+ * @param { string } folder
+ * @return { string }
+ */
+let pathFolder = folder => resolve(__dirname, folder);
+
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: resolve(__dirname, './dist'),
+    path: pathFolder('./dist'),
     publicPath: '/dist/',
     filename: 'build.js'
   },
@@ -40,7 +47,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      'components': pathFolder('./src/components'),
+      'shared': pathFolder('./src/shared')
     }
   },
   devServer: {
