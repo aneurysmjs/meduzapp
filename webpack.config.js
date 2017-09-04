@@ -50,7 +50,8 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js',
       'components': pathFolder('./src/components'),
       'shared': pathFolder('./src/shared')
-    }
+    },
+    extensions: ['.js', '.vue', 'json']
   },
   devServer: {
     historyApiFallback: true,

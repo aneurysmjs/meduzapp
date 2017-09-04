@@ -11,8 +11,8 @@
 </template>
 
 <script>
-  import MHeader from 'components/MHeader/MHeader.vue';
-  import MFooter from 'components/MFooter/MFooter.vue';
+  import MHeader from 'components/MHeader/MHeader';
+  import MFooter from 'components/MFooter/MFooter';
 
   export default {
     name: 'app',
