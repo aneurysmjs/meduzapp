@@ -1,12 +1,13 @@
 <template>
   <section>
-    <h1 class="text-center">Home</h1>
+    <m-news-feed :news="news"></m-news-feed>
     <m-error-logger v-if="isError" :message="isError.message"></m-error-logger>
   </section>
 </template>
 <script>
   import api from 'api';
   import MErrorLogger from 'shared/components/MErrorLogger/MErrorLogger';
+  import MNewsFeed from 'shared/components/MNewsFeed/MNewsFeed';
 
   export default {
     data () {
@@ -18,7 +19,8 @@
       }
     },
     components: {
-      MErrorLogger
+      MErrorLogger,
+      MNewsFeed
     },
     created () {
       /**
@@ -38,8 +40,6 @@
 
         api.get(url)
           .then(({data}) => {
-          console.log(`data.documents`);
-          console.log(data.documents);
             this.news = data.documents;
             // clean error in case request is successful.
             this.isError = undefined;
