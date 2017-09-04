@@ -5,7 +5,7 @@
     <m-footer>
       <m-address slot="col1" title="Location" address="Санкт-Петербург, Россия"></m-address>
       <m-news-list slot="col2" title="Latest News" :news-list="newsList"></m-news-list>
-      <h2 class="text-center" slot="col3">Col3</h2>
+      <m-social slot="col3" title="Follow Us"></m-social>
     </m-footer>
   </div>
 </template>
@@ -15,6 +15,7 @@
   import MFooter from 'components/MFooter/MFooter';
   import MAddress from 'shared/components/MAddress/MAddress';
   import MNewsList from 'shared/components/MNewsList/MNewsList';
+  import MSocial from 'shared/components/MSocial/MSocial';
 
   export default {
     name: 'app',
@@ -22,7 +23,8 @@
       MHeader,
       MFooter,
       MAddress,
-      MNewsList
+      MNewsList,
+      MSocial
     },
     data () {
       return {
