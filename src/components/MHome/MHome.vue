@@ -32,21 +32,18 @@
       /**
        * get the news feed from `https://meduza.io`
        *
-       * return {void}
+       * return {Promise<any>}
        */
-      getNews () {
-
+      async getNews () {
         let url = `search?chrono=news&locale=ru&page=0&per_page=24`;
-
-        api.get(url)
-          .then(({data}) => {
-            this.news = data.documents;
-            // clean error in case request is successful.
-            this.isError = undefined;
-          })
-          .catch(err => {
-            this.isError = err;
-          });
+        try {
+          let { data } = await api.get(url);
+          this.news = data.documents;
+          // clean error in case request is successful.
+          this.isError = undefined;
+        } catch(err) {
+          this.isError = err;
+        }
       }
     }
   }
