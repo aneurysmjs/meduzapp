@@ -1,18 +1,24 @@
 <template>
   <div id="app">
-    <img src="../assets/logo.png">
+    <m-header :brand-name="brandName"></m-header>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app',
-  data () {
-    return {
+  import MHeader from 'components/MHeader/MHeader.vue';
 
+  export default {
+    name: 'app',
+    components: {
+      MHeader
+    },
+    data () {
+      return {
+        brandName: 'Meduzapp'
+      }
     }
   }
-}
+
 </script>
 
 <style lang="scss">
