@@ -42,6 +42,28 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]'
         }
+      },
+      /**
+       *
+       * Font awesome font urls are of the format [dot][extension]?=[version-number], for example .woff?v=4.2.0
+       * The Regex for font types are adjusted to support these formats.
+       * Regex also support urls ending with .woff, .ttf, .eot and .svg (Used by Bootstrap).
+       */
+      {
+        test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'assets/fonts/', // where the fonts will go
+          //publicPath: '../'       // override the default path
+        }
+      },
+      {
+        // the url-loader uses DataUrls.
+        test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        // Limiting the size of the woff fonts breaks font-awesome ONLY for the extract text plugin
+        // loader: "url?limit=10000"
+        use: 'url-loader'
       }
     ]
   },
