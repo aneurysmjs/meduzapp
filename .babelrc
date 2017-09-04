@@ -1,4 +1,5 @@
 {
+  "plugins": ["transform-runtime", "transform-async-functions"],
   "presets": [
     ["env", { "modules": false }]
   ]
