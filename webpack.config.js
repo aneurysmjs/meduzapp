@@ -71,10 +71,11 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       'api$': pathFolder('./src/api/api.js'),
+      'articleMock$': pathFolder('./src/assets/json/article.json'),
       'components': pathFolder('./src/components'),
       'shared': pathFolder('./src/shared')
     },
-    extensions: ['.js', '.vue', 'json']
+    extensions: ['.js', '.vue', '.json']
   },
   devServer: {
     historyApiFallback: true,
