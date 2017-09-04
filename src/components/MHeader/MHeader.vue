@@ -1,6 +1,7 @@
 <template>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark"
+         v-bind:style="styleObject">
       <a class="navbar-brand" href="#">{{ brandName }}</a>
       <button class="navbar-toggler"
               type="button"
@@ -27,7 +28,11 @@
       }
     },
     data () {
-      return {};
+      return {
+        styleObject: {
+          background: '#24D1C4'
+        }
+      };
     }
 
   }
