@@ -4,7 +4,7 @@
     <router-view></router-view>
     <m-footer>
       <m-address slot="col1" title="Location" address="Санкт-Петербург, Россия"></m-address>
-      <h2 class="text-center" slot="col2">Col2</h2>
+      <m-news-list slot="col2" title="Latest News" :news-list="newsList"></m-news-list>
       <h2 class="text-center" slot="col3">Col3</h2>
     </m-footer>
   </div>
@@ -14,17 +14,30 @@
   import MHeader from 'components/MHeader/MHeader';
   import MFooter from 'components/MFooter/MFooter';
   import MAddress from 'shared/components/MAddress/MAddress';
+  import MNewsList from 'shared/components/MNewsList/MNewsList';
 
   export default {
     name: 'app',
     components: {
       MHeader,
       MFooter,
-      MAddress
+      MAddress,
+      MNewsList
     },
     data () {
       return {
-        brandName: 'Meduzapp'
+        brandName: 'Meduzapp',
+        newsList: [
+          {
+            title: 'Lorem ipsum'
+          },
+          {
+            title: 'Neque Porro'
+          },
+          {
+            title: 'Россия'
+          }
+        ]
       }
     }
   }
