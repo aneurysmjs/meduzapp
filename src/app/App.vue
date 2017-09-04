@@ -11,8 +11,8 @@
 </template>
 
 <script>
-  import MHeader from 'components/MHeader/MHeader';
-  import MFooter from 'components/MFooter/MFooter';
+  import MHeader from 'shared/components/MHeader/MHeader';
+  import MFooter from 'shared/components/MFooter/MFooter';
   import MAddress from 'shared/components/MAddress/MAddress';
   import MNewsList from 'shared/components/MNewsList/MNewsList';
   import MSocial from 'shared/components/MSocial/MSocial';
