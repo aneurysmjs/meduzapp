@@ -43,6 +43,10 @@
       articleHandler (articleKey) {
         console.log(`articleKey`);
         console.log(articleKey);
+        // extract the last piece of thr URL which is the article's name
+        let articleName = articleKey.split('/').pop();
+        // push the articleName for the url and `articleKey` for the NewsArticle
+        this.$router.push({ name: `article`, params: {articleKey, articleName} });
       }
     }
   }
