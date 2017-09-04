@@ -1,10 +1,12 @@
 <template>
   <section>
     <h1 class="text-center">Home</h1>
+    <m-error-logger v-if="isError" :message="isError.message"></m-error-logger>
   </section>
 </template>
 <script>
   import api from 'api';
+  import MErrorLogger from 'shared/components/MErrorLogger/MErrorLogger';
 
   export default {
     data () {
@@ -14,6 +16,9 @@
         },
         isError: undefined
       }
+    },
+    components: {
+      MErrorLogger
     },
     created () {
       /**
