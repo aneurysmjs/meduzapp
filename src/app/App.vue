@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <m-header :brand-name="brandName"></m-header>
+    <router-view></router-view>
   </div>
 </template>
 
