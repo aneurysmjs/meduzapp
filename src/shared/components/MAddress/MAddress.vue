@@ -21,3 +21,13 @@
     }
   }
 </script>
+<style lang="scss" scoped>
+  aside.text-center {
+    i {
+      color: #24D1C4;
+      &:hover {
+
+      }
+    }
+  }
+</style>

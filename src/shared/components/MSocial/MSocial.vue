@@ -46,5 +46,13 @@
     margin: 0 auto;
     height: 3em;
     width: 16rem;
+
+    i {
+      color: #24D1C4;
+      &:hover {
+
+      }
+    }
+
   }
 </style>

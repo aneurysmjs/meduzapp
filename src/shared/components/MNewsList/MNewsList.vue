@@ -25,5 +25,11 @@
   div.newsList {
     margin: 0 auto;
     width: 16rem;
+    i {
+      color: #24D1C4;
+      &:hover {
+
+      }
+    }
   }
 </style>
