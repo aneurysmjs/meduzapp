@@ -1,6 +1,6 @@
 <template>
   <aside class="text-center">
-    <h3>{{ title }}</h3>
+    <h4>{{ title }}</h4>
     <div class="socialIcons d-flex justify-content-between align-items-center">
       <a v-for="social in socialNetworks"
          :href="social.url"

@@ -1,6 +1,6 @@
 <template>
   <aside class="text-center">
-    <h3>{{ title }}</h3>
+    <h4>{{ title }}</h4>
    <div class="newsList" v-for="n in newsList">
      <i class="fa fa-pencil" aria-hidden="true"></i>
      {{ n.title }}

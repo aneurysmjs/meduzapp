@@ -1,6 +1,6 @@
 <template>
   <aside class="text-center">
-    <h3>{{ title }}</h3>
+    <h4>{{ title }}</h4>
     <p>
       <i class="fa fa-map-marker" aria-hidden="true"></i>
       {{ address }}
