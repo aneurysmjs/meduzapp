@@ -70,6 +70,7 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
+      'api$': pathFolder('./src/api/api.js'),
       'components': pathFolder('./src/components'),
       'shared': pathFolder('./src/shared')
     },
