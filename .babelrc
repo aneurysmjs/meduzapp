@@ -1,5 +1,9 @@
 {
-  "plugins": ["transform-runtime", "transform-async-functions"],
+  "plugins": [
+    "transform-runtime",
+    "transform-async-functions",
+    "syntax-dynamic-import"
+  ],
   "presets": [
     ["env", { "modules": false }]
   ]

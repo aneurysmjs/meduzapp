@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="mHeader fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark"
          v-bind:style="styleObject">
       <a class="navbar-brand" href="#">{{ brandName }}</a>
@@ -37,3 +37,9 @@
 
   }
 </script>
+<style lang="scss" scoped>
+  .mHeader {
+    margin: 0 auto;
+    width: 78%;
+  }
+</style>
