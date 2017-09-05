@@ -8,6 +8,12 @@
         @on-click="loadMoreHandler">
       </m-button>
     </div>
+    <div class="d-flex justify-content-center my-2">
+      <m-page-buttons
+        :pages="pages"
+        @on-click="pageHandler($event)">
+      </m-page-buttons>
+    </div>
     <m-error-logger v-if="isError" :message="isError.message"></m-error-logger>
   </section>
 </template>
@@ -16,6 +22,7 @@
   import MErrorLogger from 'shared/components/MErrorLogger/MErrorLogger';
   import MNewsFeed from 'shared/components/MNewsFeed/MNewsFeed';
   import MButton from 'shared/components/MButton/MButton';
+  import MPageButtons from 'shared/components/MPageButtons/MPageButtons';
 
   export default {
     data () {
@@ -37,13 +44,26 @@
         /**
          * @type {Boolean}
          */
-        isButtonBlocked: false
+        isButtonBlocked: false,
+        /**
+         * current page
+         *
+         * @type {Number}
+         */
+        page: 0,
+        /**
+         * the amount of pages to display
+         *
+         * @type {Number}
+         */
+        pages: 5,
       }
     },
     components: {
       MErrorLogger,
       MNewsFeed,
-      MButton
+      MButton,
+      MPageButtons
     },
     created () {
       /**
@@ -59,7 +79,7 @@
        */
       async getNews () {
 
-        let url = `search?chrono=news&locale=ru&page=0&per_page=${this.records}`;
+        let url = `search?chrono=news&locale=ru&page=${this.page}&per_page=${this.records}`;
 
         try {
           // destructure response's `data` property
@@ -90,6 +110,19 @@
         } else { // otherwise block the button.
           this.isButtonBlocked = true;
         }
+      },
+      /**
+       * get the desirable page selected by the user.
+       *
+       * @param {Number} pageNumber
+       * @return {void}
+       */
+      pageHandler (pageNumber) {
+        // set the current page number.
+        this.page = pageNumber;
+        // reset records since is a new page.
+        this.records = 0;
+        this.getNews();
       }
     }
   }
