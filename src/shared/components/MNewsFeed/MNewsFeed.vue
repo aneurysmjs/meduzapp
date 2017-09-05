@@ -2,6 +2,9 @@
   <div>
     <h1 class="text-center my-3">{{ title }}</h1>
     <h2 class="text-center my-2">Добро Пожаловать</h2>
+    <div class="text-center">
+      <m-spinner v-if="!Object.keys(news).length"></m-spinner>
+    </div>
     <div class="d-flex flex-wrap justify-content-between"
          v-if="Object.keys(news).length">
       <m-news-feed-item
@@ -24,6 +27,7 @@
 
 <script>
   import MNewsFeedItem from 'shared/components/MNewsFeedItem/MNewsFeedItem';
+  import MSpinner from 'shared/components/MSpinner/MSpinner';
 
   export default {
     props: {
@@ -38,7 +42,10 @@
         newsList: this.news
       }
     },
-    components: { MNewsFeedItem },
+    components: {
+      MNewsFeedItem,
+      MSpinner
+    },
     methods: {
       articleHandler (articleKey) {
         console.log(`articleKey`);
