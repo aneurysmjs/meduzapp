@@ -1,9 +1,7 @@
 const webpackMerge = require('webpack-merge');
 const { setupCommonConfig, setupPath } = require('./helpers');
 
-const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
-const DllBundlesPlugin = require('webpack-dll-bundles-plugin').DllBundlesPlugin;
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+
 
 module.exports = (env) => {
  
@@ -34,10 +32,6 @@ module.exports = (env) => {
        */
       historyApiFallback: true
     },
-
-    plugins: [
-      new HardSourceWebpackPlugin()
-    ],
 
   });
 
