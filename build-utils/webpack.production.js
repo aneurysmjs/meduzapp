@@ -1,5 +1,5 @@
 const Webpack = require('webpack');
-const webpackMerge = require('webpack-merge');
+const {merge: webpackMerge} = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');

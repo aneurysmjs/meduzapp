@@ -1,4 +1,4 @@
-const webpackMerge = require('webpack-merge');
+const {merge: webpackMerge} = require('webpack-merge');
 const { setupCommonConfig, setupPath } = require('./helpers');
 
 
@@ -23,7 +23,7 @@ module.exports = (env) => {
     devServer: {
       // By default it will use your current working directory to serve content,
       // but you can modify this to another directory
-      contentBase: pathToProject,
+      static: pathToProject,
       compress: true,
       port: 9000,
       /**

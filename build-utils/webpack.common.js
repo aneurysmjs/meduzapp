@@ -3,7 +3,7 @@ const { setupPath } = require('./helpers');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const { VueLoaderPlugin } = require('vue-loader')
 
 const progressHandler = (percentage, message, ...args) => {
   // e.g. Output each progress message directly to the console:
@@ -18,7 +18,7 @@ module.exports = (mode) => {
 
     resolve: {
       alias: {
-        'vue$': 'vue/dist/vue.esm.js',
+        'vue$': 'vue/dist/vue.esm-bundler.js',
         'api$': setupPath('../src/api/api.js'),
         'components': setupPath('../src/components'),
         'shared': setupPath('../src/shared')
@@ -34,7 +34,7 @@ module.exports = (mode) => {
           loader: 'vue-loader'
         },
         {
-          test: /\.jsx?$/,
+          test: /\.js$/,
           exclude: [/node_modules/],
           use: [
             {
@@ -100,15 +100,15 @@ module.exports = (mode) => {
         template: setupPath('../src/index.html'),
       }),
       // copy files and folders to specific paths.
-      new CopyWebpackPlugin([{
-        // Copy `assets` contents to {output}/assets/
-        from: 'src/assets',
-        to: 'assets',
-        ignore: [
-          // Doesn't copy any files with a scss extension
-          '*.scss'
-        ],
-      }])
+      // new CopyWebpackPlugin([{
+      //   // Copy `assets` contents to {output}/assets/
+      //   from: 'src/assets',
+      //   to: 'assets',
+      //   ignore: [
+      //     // Doesn't copy any files with a scss extension
+      //     '*.scss'
+      //   ],
+      // }])
     ]
   };
 };
